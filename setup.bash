@@ -37,7 +37,7 @@ if [ debug ] ; then npm install -g html2pug ; fi
 npm install html2pug > /dev/null 2>&1 && echo [$0] installed html2pug.
 
 # step 7: create application skeleton.
-express --view=pug paradigm-shift && echo [$0] created web application skeleton.
+express --css sass --view=pug paradigm-shift && echo [$0] created web application skeleton.
 cd paradigm-shift && yarn init && yarn install && echo [$0] application initialized and node modules installed.
 
 # step 8: download Paradigm Shift template.
@@ -49,10 +49,9 @@ cp -R html5up-paradigm-shift/assets/fonts public && echo [$0] installed fonts.
 cp html5up-paradigm-shift/assets/js/* public/javascripts && echo [$0] installed javascripts.
 cp -R html5up-paradigm-shift/assets/sass public/stylesheets && echo [$0] installed sass modules.
 cp html5up-paradigm-shift/assets/css/* public/stylesheets && echo [$0] installed stylesheets.
-html2pug < html5up-paradigm-shift/index.html > views/index.pug && echo [$0] installed index.html.
+html2pug < html5up-paradigm-shift/index.html > views/index.jade && echo [$0] installed index.html.
 cp -R html5up-paradigm-shift/images public && echo [$0] installed images.
 rm -rf html5up-paradigm-shift && echo [$0] removing template download.
 
 # step 10: start application
-echo [$0] step 10: start application
-DEBUG=paradigm-shift:* yarn start && echo [$0] step 10: completed.
+echo [$0] starting web application && DEBUG=paradigm-shift:* yarn start
