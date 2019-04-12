@@ -42,7 +42,8 @@ express --css sass --view pug paradigm-shift && echo [$0] created web applicatio
 cd paradigm-shift && yarn init && yarn install && echo [$0] application initialized and node modules installed.
 
 # step 8: download Paradigm Shift template.
-curl https://html5up.net/paradigm-shift/download --output html5up-paradigm-shift.zip && echo [$0] downloaded Paradigm Shift template.
+# curl https://html5up.net/paradigm-shift/download --output html5up-paradigm-shift.zip && echo [$0] downloaded Paradigm Shift template.
+mv ../download.zip html5up-paradigm-shift.zip
 
 # step 9: install template.
 unzip html5up-paradigm-shift.zip -d html5up-paradigm-shift && echo [$0] unzipped templated download.
