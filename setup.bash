@@ -5,13 +5,19 @@
 # script created: 20190412
 # script purpose: spin up node/express with HTML5UP's Paradigm Shift template
 
+# disable/enable debugging.
+debug="false" && echo [$0] set debug to $debug.
+
 # step 1: enable the Yarn repository. import the repository’s GPG key using the following curl command:
+if [ $debug ] ; then curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - ; fi
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - > /dev/null 2>&1 && echo [$0] enabled the Yarn repository. imported the repository’s GPG key.
 
 # step 2: add the Yarn APT repository to system software repository list.
+if [ $debug ] ; then echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list ; fi
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list > /dev/null 2>&1 && echo [$0] added the Yarn APT repository to system software repository list
 
 # step 3: update the package list and install Yarn. this also installs Node. install unzip and install NPM last.
+if [ $debug ] ; then sudo apt -y update && sudo apt -y install unzip && sudo apt -y install yarn && sudo apt -y install npm ; fi
 sudo apt -y update > /dev/null 2>&1 && echo [$0] updated APT packages.
 sudo apt -y install unzip > /dev/null 2>&1 && echo [$0] installed unzip APT.
 sudo apt -y install yarn > /dev/null 2>&1 && echo [$0] installed Yarn APT.
@@ -23,9 +29,11 @@ nodeversion=$(nodejs --version) && echo [$0] installed nodejs version $nodeversi
 npmversion=$(npm --version) && echo [$0] installed npm version $npmversion.
 
 # step 5: install Express Generator.
-npm install -g express-generator > /dev/null 2>&1 && echo [$0] installed Express Generator.
+if [ $debug ] ; then sudo apt -y install node-express-generator ; fi
+npm install node-express-generator > /dev/null 2>&1 && echo [$0] installed Express Generator.
 
 # step 6: install html2pug.
+if [ $debug ] ; then npm install -g html2pug ; fi
 npm install html2pug > /dev/null 2>&1 && echo [$0] installed html2pug.
 
 # step 7: create application skeleton.
