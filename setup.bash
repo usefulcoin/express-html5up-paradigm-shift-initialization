@@ -6,7 +6,7 @@
 # script purpose: spin up node/express with HTML5UP's Paradigm Shift template
 
 # disable/enable debugging.
-debug="false" && echo [$0] set debug to $debug.
+debug="false" && echo [$0] set debug mode to "$debug".
 
 # step 1: enable the Yarn repository. import the repository’s GPG key using the following curl command:
 if $debug ; then curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - ; fi
@@ -23,17 +23,18 @@ sudo apt -y install unzip > /dev/null 2>&1 && echo [$0] installed unzip APT.
 sudo apt -y install yarn > /dev/null 2>&1 && echo [$0] installed Yarn APT.
 sudo apt -y install npm > /dev/null 2>&1 && echo [$0] installed NPM APT.
 
-# step 4: verify the installation of the Yarn APT, the Node APT, and the NPM APT.
-yarnversion=$(yarn --version) && echo [$0] installed yarn version $yarnversion.
-nodeversion=$(nodejs --version) && echo [$0] installed nodejs version $nodeversion.
-npmversion=$(npm --version) && echo [$0] installed npm version $npmversion.
-
-# step 5: install Express Generator.
-if $debug ; then sudo apt -y install node-express-generator ; fi
+# step 4: install Express Generator.
+if $debug ; then sudo npm install -g node-express-generator ; fi
 sudo npm install -g node-express-generator > /dev/null 2>&1 && echo [$0] installed Express Generator.
 
+# step 5: verify the installation of the Yarn APT, the Node APT, the NPM APT and ExpressJS via NPM.
+yarnversion=$(yarn --version) && echo [$0] verified the installation of yarn version $yarnversion.
+nodeversion=$(nodejs --version) && echo [$0] verified the installation of nodejs version $nodeversion.
+npmversion=$(npm --version) && echo [$0] verified the installation of npm version $npmversion.
+expressversion=$(express --version) && echo [$0] verified the installation of express version $expressversion.
+
 # step 6: install html2pug.
-if $debug ; then npm install -g html2pug ; fi
+if $debug ; then sudo npm install -g html2pug ; fi
 sudo npm install -g html2pug > /dev/null 2>&1 && echo [$0] installed html2pug.
 
 # step 7: create application skeleton.
