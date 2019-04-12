@@ -53,7 +53,7 @@ cp -R html5up-paradigm-shift/assets/sass public/stylesheets && echo [$0] install
 cp html5up-paradigm-shift/assets/css/* public/stylesheets && echo [$0] installed stylesheets.
 html2pug < html5up-paradigm-shift/index.html > /tmp/puggified.html && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/puggified.html > views/index.pug && echo [$0] installed index.html.
 cp -R html5up-paradigm-shift/images public && echo [$0] installed images.
-rm -rf html5up-paradigm-shift && echo [$0] removing template download.
+rm -rf html5up-paradigm-shift.zip && echo [$0] removing template zip download.
 
 # step 10: start application
 echo [$0] starting web application && DEBUG=paradigm-shift:* yarn start
