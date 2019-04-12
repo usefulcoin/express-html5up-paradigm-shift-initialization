@@ -20,7 +20,7 @@ The script was written to automate the process of preparing an Express web appli
 9. Start the web application on port 3000. Make sure that access is configured for the network interface over at Amazon.
 
 ## Execution
-```
+```sh
 git clone https://github.com/usefulcoin/express-html5up-paradigm-shift-initialization.git
 cd express-html5up-paradigm-shift-initialization
 bash setup.bash
