@@ -39,7 +39,8 @@ sudo npm install -g html2pug > /dev/null 2>&1 && echo [$0] installed html2pug.
 
 # step 7: create application skeleton.
 express --css sass --view pug paradigm-shift && echo [$0] created web application skeleton.
-cd paradigm-shift && yarn init && yarn install && echo [$0] application initialized and node modules installed.
+cd paradigm-shift && yarn init && yarn install && echo [$0] application initialized and essential node modules installed.
+npm install --save-dev nodemon && echo [$0] nodemon installed as a developer dependency.
 
 # step 8: download Paradigm Shift template.
 # curl https://html5up.net/paradigm-shift/download --output html5up-paradigm-shift.zip && echo [$0] downloaded Paradigm Shift template.
