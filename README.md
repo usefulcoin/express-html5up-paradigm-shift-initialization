@@ -24,7 +24,7 @@ The script was written to automate the process of preparing an Express web appli
 git clone https://github.com/usefulcoin/express-html5up-paradigm-shift-initialization.git
 cd express-html5up-paradigm-shift-initialization
 bash setup.bash
-```sh
+```
 
 ## Debugging
 
