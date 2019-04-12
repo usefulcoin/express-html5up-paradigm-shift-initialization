@@ -51,7 +51,7 @@ cp -R html5up-paradigm-shift/assets/fonts public && echo [$0] installed fonts.
 cp html5up-paradigm-shift/assets/js/* public/javascripts && echo [$0] installed javascripts.
 cp -R html5up-paradigm-shift/assets/sass public/stylesheets && echo [$0] installed sass modules.
 cp html5up-paradigm-shift/assets/css/* public/stylesheets && echo [$0] installed stylesheets.
-html2pug < html5up-paradigm-shift/index.html > views/index.jade && echo [$0] installed index.html.
+html2pug < html5up-paradigm-shift/index.html > views/index.pug && echo [$0] installed index.html.
 cp -R html5up-paradigm-shift/images public && echo [$0] installed images.
 rm -rf html5up-paradigm-shift && echo [$0] removing template download.
 
