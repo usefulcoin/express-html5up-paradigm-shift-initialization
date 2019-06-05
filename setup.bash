@@ -43,8 +43,7 @@ cd paradigm-shift && yarn init && yarn install && echo [$0] application initiali
 yarn add --dev nodemon && echo [$0] nodemon installed as a developer dependency.
 
 # step 8: download Paradigm Shift template.
-# curl https://html5up.net/paradigm-shift/download --output html5up-paradigm-shift.zip && echo [$0] downloaded Paradigm Shift template.
-mv ../download.zip html5up-paradigm-shift.zip
+curl --location https://html5up.net/paradigm-shift/download --output html5up-paradigm-shift.zip && echo [$0] downloaded Paradigm Shift template.
 
 # step 9: install template.
 unzip html5up-paradigm-shift.zip -d html5up-paradigm-shift && echo [$0] unzipped templated download.
